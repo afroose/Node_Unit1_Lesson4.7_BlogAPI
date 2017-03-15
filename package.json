@@ -1,0 +1,36 @@
+{
+  "name": "bloagapi",
+  "version": "0.0.1",
+  "description": "Blog api Unit 1 Lesson 4.7 - Server Side",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "mocha ./test"
+  },
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.12.4",
+    "morgan": "^1.7.0",
+    "uuid": "^2.0.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "node",
+    "hyperdev",
+    "express"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-http": "^3.0.0",
+    "mocha": "^3.1.2"
+  },
+  "author": "afroose"
+}
