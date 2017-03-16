@@ -42,7 +42,7 @@ app.post('/blog-posts', jsonParser, (req, res) => {
 // required fields. also ensure that item id in url path, and
 // item id in updated item object match. if problems with any
 // of that, log error and send back status code 400. otherwise
-// call `ShoppingList.update` with updated item.
+// call `blogposts.update` with updated item.
 app.put('/blog-posts/:id', jsonParser, (req, res) => {
   const requiredFields = ['title', 'content', 'author', 'publishDate', 'id'];
   for (let i=0; i<requiredFields.length; i++) {
@@ -64,16 +64,17 @@ app.put('/blog-posts/:id', jsonParser, (req, res) => {
   const updatedItem = BlogPosts.update({
     id: req.params.id,
     title: req.body.title, 
-    body: req.body.content, 
+    content: req.body.content, 
     author: req.body.author, 
     publishDate: req.body.publishDate
   });
   res.status(204).json(updatedItem);
+
 });
 
 app.delete('/blog-posts/:id', (req, res) => {
-  ShoppingList.delete(req.params.id);
-  console.log(`Deleted shopping list item \`${req.params.id}\``);
+  BlogPosts.delete(req.params.id);
+  console.log(`Deleted Blog Post item \`${req.params.id}\``);
   res.status(204).end();
 });
 
